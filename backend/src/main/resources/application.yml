@@ -9,6 +9,12 @@ cors:
   allowed-headers: "*"
   exposed-headers: "*"
 
+aws:
+  region: ca-central-1
+  s3:
+    buckets:
+      customer: fs-labibaproject-customer-test
+
 management:
   endpoints:
     web:

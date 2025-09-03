@@ -2,11 +2,13 @@ package com.amigoscode.customer;
 
 import com.amigoscode.AbstractTestcontainers;
 import com.amigoscode.TestConfig;
+import com.amigoscode.s3.S3Service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Import;
 
@@ -24,6 +26,9 @@ class CustomerRepositoryTest extends AbstractTestcontainers {
 
     @Autowired
     private ApplicationContext applicationContext;
+
+    @MockBean
+    private S3Service s3Service;
 
     @BeforeEach
     void setUp() {
